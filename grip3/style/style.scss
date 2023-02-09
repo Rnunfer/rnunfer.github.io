@@ -1,0 +1,275 @@
+:root {
+	--primario:#7abe47;
+	--secundario:#ffc845;
+	--negro:#000000;
+	--claro:#ffffff;
+	--gris:#eeeeee;
+	--oscuro:#57a42b;
+	--padding:1rem;
+	--paddingt:2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+
+    background-color: var(--primario);
+
+    div {
+
+        padding: 10px;
+        text-align: center;
+
+        @media (min-width: 700px) {
+            display: grid;
+            grid-template-columns: 30% auto 30%;
+        }
+
+        #logo {
+            max-width: 424px;
+            width: 100%;
+
+            @media (min-width: 700px) {
+                grid-column: 1;
+                width: auto;
+            }
+        }
+            
+        ul {
+
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+            @media (min-width: 700px) {
+                grid-column: 3;
+                grid-template-columns: repeat(3, 1fr);
+                margin-top: 0px;
+                align-items: center;
+            }
+
+            a {
+                color: var(--claro);
+                text-decoration: none;
+                display: block;
+                position: relative;
+                margin: 10px 0;
+                font-weight: bold;
+
+                @media (min-width: 700px) {
+                    display: inline;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 0;
+                    height: 2px;
+                    background-color: white;
+                    transition: width 0.2s ease-in-out;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+            
+        }
+
+    }
+    
+}
+
+main {
+
+    background-color: var(--gris);
+    padding: var(--padding) 0;
+
+    #sobreNosotros {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 700px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+
+        h1 {
+            padding-top: 0;
+        }
+
+        #sobreNosotros-imagen {
+            max-width: 100%;
+        }
+
+        #sobreNosotros-texto {
+
+            padding: var(--padding);
+
+            h1 {
+                font-weight: normal;
+            }
+
+            p {
+                padding-top: var(--paddingt);
+            }
+        }
+    }
+
+    h1 {
+        font-weight: normal;
+        padding-top: var(--paddingt);
+    }
+
+    #aLaVenta {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        
+        @media (min-width: 700px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        article {
+
+            background-color: var(--claro);
+            border: 1px solid gray;
+
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+
+            section {
+                
+                display: flex;
+                flex-direction: column;
+                padding: var(--padding);
+
+                h2 {
+                    padding-bottom: var(--padding);
+                    font-weight: normal;
+                    font-size: 2em;
+                }
+
+                b {
+                    font-size: large;
+                }
+
+                span {
+                    color: var(--primario);
+                }
+
+                input {
+                    background-color: var(--primario);
+                    padding: 10px 0px;
+                    border: none;
+                    color: var(--claro);
+                    transition: 0.2s;
+
+                    &:hover {
+                        background-color: var(--oscuro);
+                    }
+                }
+            }
+        }
+
+        .destacado {
+            grid-column: 1 / 3;
+            grid-row: 1;
+
+            @media (min-width: 480px) {
+                display:grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+footer {
+
+    background-color: #7abe47;
+    color: var(--claro);
+
+    @media (min-width: 700px) {
+        #footer_superior {
+            display: grid;
+            grid-template-columns: 30% 20% 2*1fr;
+            gap: 10px;
+        }
+    }
+
+    section {
+
+        h2 {
+            padding: 20px 0px;
+            font-size: 1.5em;
+        }
+
+        ul {
+            display: grid;
+            gap: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--claro);
+            transition: 0.2s;
+
+            &:hover {
+                color: var(--negro);
+            }
+        }
+
+    }
+
+    #casas_a_la_venta {
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill ,minmax(200px, 1fr));
+            gap: 10px;
+
+            article {
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+                img {
+                    max-width: 100%;
+                    max-width: 100px;
+                }
+
+                div {
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: space-around;
+                }
+
+            }
+        }   
+    }
+
+    #copyright {
+        background-color: #57a42b;
+        text-align: center;
+        padding: 20px 0px;
+        margin-top: 20px;
+    }
+}

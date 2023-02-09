@@ -1,0 +1,255 @@
+:root {
+  --primario:#7abe47;
+  --secundario:#ffc845;
+  --negro:#000000;
+  --claro:#ffffff;
+  --gris:#eeeeee;
+  --oscuro:#57a42b;
+  --padding:1rem;
+  --paddingt:2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: var(--primario);
+}
+header div {
+  padding: 10px;
+  text-align: center;
+}
+@media (min-width: 700px) {
+  header div {
+    display: grid;
+    grid-template-columns: 30% auto 30%;
+  }
+}
+header div #logo {
+  max-width: 424px;
+  width: 100%;
+}
+@media (min-width: 700px) {
+  header div #logo {
+    grid-column: 1;
+    width: auto;
+  }
+}
+header div ul {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+@media (min-width: 700px) {
+  header div ul {
+    grid-column: 3;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 0px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+header div ul a {
+  color: var(--claro);
+  text-decoration: none;
+  display: block;
+  position: relative;
+  margin: 10px 0;
+  font-weight: bold;
+}
+@media (min-width: 700px) {
+  header div ul a {
+    display: inline;
+  }
+}
+header div ul a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: white;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+}
+header div ul a:hover::after {
+  width: 100%;
+}
+
+main {
+  background-color: var(--gris);
+  padding: var(--padding) 0;
+}
+main #sobreNosotros {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 700px) {
+  main #sobreNosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+main #sobreNosotros h1 {
+  padding-top: 0;
+}
+main #sobreNosotros #sobreNosotros-imagen {
+  max-width: 100%;
+}
+main #sobreNosotros #sobreNosotros-texto {
+  padding: var(--padding);
+}
+main #sobreNosotros #sobreNosotros-texto h1 {
+  font-weight: normal;
+}
+main #sobreNosotros #sobreNosotros-texto p {
+  padding-top: var(--paddingt);
+}
+main h1 {
+  font-weight: normal;
+  padding-top: var(--paddingt);
+}
+main #aLaVenta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+@media (min-width: 700px) {
+  main #aLaVenta {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+main #aLaVenta article {
+  background-color: var(--claro);
+  border: 1px solid gray;
+}
+main #aLaVenta article img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main #aLaVenta article section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: var(--padding);
+}
+main #aLaVenta article section h2 {
+  padding-bottom: var(--padding);
+  font-weight: normal;
+  font-size: 2em;
+}
+main #aLaVenta article section b {
+  font-size: large;
+}
+main #aLaVenta article section span {
+  color: var(--primario);
+}
+main #aLaVenta article section input {
+  background-color: var(--primario);
+  padding: 10px 0px;
+  border: none;
+  color: var(--claro);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+main #aLaVenta article section input:hover {
+  background-color: var(--oscuro);
+}
+main #aLaVenta .destacado {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+@media (min-width: 480px) {
+  main #aLaVenta .destacado {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+footer {
+  background-color: #7abe47;
+  color: var(--claro);
+}
+@media (min-width: 700px) {
+  footer #footer_superior {
+    display: grid;
+    grid-template-columns: 30% 20% 2fr;
+    gap: 10px;
+  }
+}
+footer section h2 {
+  padding: 20px 0px;
+  font-size: 1.5em;
+}
+footer section ul {
+  display: grid;
+  gap: 20px;
+}
+footer section a {
+  text-decoration: none;
+  color: var(--claro);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+footer section a:hover {
+  color: var(--negro);
+}
+footer #casas_a_la_venta section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+footer #casas_a_la_venta section article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+footer #casas_a_la_venta section article img {
+  max-width: 100%;
+  max-width: 100px;
+}
+footer #casas_a_la_venta section article div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+footer #copyright {
+  background-color: #57a42b;
+  text-align: center;
+  padding: 20px 0px;
+  margin-top: 20px;
+}/*# sourceMappingURL=style.css.map */
