@@ -1,3 +1,38 @@
-header img {
-  max-width: 250px;
+#wrapper {
+  padding: 1rem 0rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: white;
+  margin: 1rem auto;
+  border-radius: 20px;
+}
+#wrapper #firstColumn {
+  background-color: #150941;
+  padding: 1rem;
+  margin-left: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  color: white;
+  border-radius: 20px;
+}
+#wrapper #firstColumn img {
+  max-width: 100%;
+  border-radius: 100%;
+}
+#wrapper #firstColumn h3 {
+  padding-bottom: 2px;
+  border-bottom: 2px solid white;
+}
+#wrapper #firstColumn ul {
+  list-style: none;
+}
+#wrapper #secondColumn {
+  padding-left: 1rem;
+}
+#wrapper #secondColumn h1 {
+  font-size: 3rem;
+}
+#wrapper #secondColumn h2 {
+  margin-top: 1rem;
+  font-size: 2rem;
 }/*# sourceMappingURL=cv.component.css.map */

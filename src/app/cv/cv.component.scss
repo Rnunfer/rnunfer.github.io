@@ -1,6 +1,52 @@
-header {
+#wrapper {
 
-    img {
-        max-width: 250px;
+    padding: 1rem 0rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: white;
+    margin: 1rem auto;
+    border-radius: 20px;
+    
+
+    #firstColumn {
+
+        background-color: #150941;
+        padding: 1rem;
+        margin-left: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        color: white;
+        border-radius: 20px;
+
+        img {
+            max-width: 100%;
+            border-radius: 100%;
+        }
+
+        h3 {
+            padding-bottom: 2px;
+            border-bottom: 2px solid white;
+        }
+
+        ul {
+            list-style: none;
+        }
     }
+
+    #secondColumn {
+
+        padding-left: 1rem;
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            margin-top: 1rem;
+            font-size: 2rem;
+        }
+    }
+
+    
+    
 }
